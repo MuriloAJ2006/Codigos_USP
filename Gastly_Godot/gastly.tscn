@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://b0lu0td80prog"]
+
+[ext_resource type="PackedScene" uid="uid://ck1mka7gsxujf" path="res://Gastly.glb" id="1_3tya3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0ut5"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jt1d7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjk3a"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fja3"]
+albedo_color = Color(0.5812217, 3.017798e-05, 0.44837302, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_go1bu"]
+albedo_color = Color(0.6292957, 0.28471354, 1.92523e-07, 1)
+
+[sub_resource type="Curve" id="Curve_3tya3"]
+_data = [Vector2(0.4952607, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rj1pe"]
+curve = SubResource("Curve_3tya3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m5a1v"]
+emission_shape_scale = Vector3(1, 0.5, 1)
+emission_shape = 1
+emission_sphere_radius = 0.4
+gravity = Vector3(0, 1.5, 0.5)
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_rj1pe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xci24"]
+transparency = 1
+blend_mode = 3
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0.95419234, 0.0007469893, 0.9541854, 0.3254902)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6o4we"]
+material = SubResource("StandardMaterial3D_xci24")
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 4
+
+[sub_resource type="Animation" id="Animation_3tya3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gastly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.25, 0.15, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x5d2o"]
+resource_name = "flutuar"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gastly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.375, 0.75, 1.125, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.25, 0.15, 0.15), Vector3(-0.25, 0.15, -0.15), Vector3(0.15, -0.15, 0.15), Vector3(0.15, -0.15, -0.15), Vector3(-0.25, 0.15, 0.15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lt2d0"]
+_data = {
+&"RESET": SubResource("Animation_3tya3"),
+&"flutuar": SubResource("Animation_x5d2o")
+}
+
+[node name="Gastly" type="Node3D" unique_id=557895270]
+
+[node name="Gastly" parent="." unique_id=121449815 instance=ExtResource("1_3tya3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.25, 0.15, 0)
+
+[node name="Sphere" parent="Gastly" index="0" unique_id=1023094479]
+surface_material_override/0 = SubResource("StandardMaterial3D_e0ut5")
+
+[node name="Sphere_002" parent="Gastly" index="3" unique_id=760859966]
+surface_material_override/0 = SubResource("StandardMaterial3D_jt1d7")
+
+[node name="Sphere_003" parent="Gastly" index="4" unique_id=297776978]
+surface_material_override/0 = SubResource("StandardMaterial3D_mjk3a")
+
+[node name="Sphere_005" parent="Gastly" index="6" unique_id=855509393]
+surface_material_override/0 = SubResource("StandardMaterial3D_0fja3")
+
+[node name="Sphere_006" parent="Gastly" index="7" unique_id=1302900341]
+surface_material_override/0 = SubResource("StandardMaterial3D_go1bu")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Gastly" unique_id=1463587457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15801948, -0.0045570135)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_m5a1v")
+draw_pass_1 = SubResource("SphereMesh_6o4we")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1972388477]
+libraries/ = SubResource("AnimationLibrary_lt2d0")
+autoplay = &"flutuar"
+
+[editable path="Gastly"]
