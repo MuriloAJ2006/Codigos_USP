@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bmsqanu6nf2o3"]
+
+[ext_resource type="PackedScene" uid="uid://dq6xqsqn0cv2t" path="res://Arvores/Arvore_1.glb" id="1_8hta3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhudt"]
+albedo_color = Color(0.42904934, 0.30316785, 0.07978193, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25b81"]
+albedo_color = Color(1.9853935e-07, 0.32707372, 0, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1007356210]
+
+[node name="Arvore_1" parent="." unique_id=383758809 instance=ExtResource("1_8hta3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15258789, 0, 0.2211914)
+
+[node name="Vert" parent="Arvore_1" index="0" unique_id=1741232553]
+surface_material_override/0 = SubResource("StandardMaterial3D_bhudt")
+
+[node name="Icosphere" parent="Arvore_1" index="1" unique_id=1466840320]
+surface_material_override/0 = SubResource("StandardMaterial3D_25b81")
+
+[node name="Icosphere_001" parent="Arvore_1" index="2" unique_id=1278621950]
+surface_material_override/0 = SubResource("StandardMaterial3D_25b81")
+
+[node name="Icosphere_002" parent="Arvore_1" index="3" unique_id=177203373]
+surface_material_override/0 = SubResource("StandardMaterial3D_25b81")
+
+[node name="Icosphere_003" parent="Arvore_1" index="4" unique_id=610276796]
+surface_material_override/0 = SubResource("StandardMaterial3D_25b81")
+
+[editable path="Arvore_1"]

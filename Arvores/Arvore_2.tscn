@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dm4026kvhlf7x"]
+
+[ext_resource type="PackedScene" uid="uid://u2i2jvhlgm86" path="res://Arvores/Arvore_2.glb" id="1_htkg0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxpmt"]
+albedo_color = Color(0.26222607, 0.2029773, 0.08038399, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_veqd1"]
+albedo_color = Color(0, 0.39607844, 0.105882354, 1)
+
+[node name="Node3D" type="Node3D" unique_id=189957886]
+
+[node name="Arvore_2" parent="." unique_id=2104965275 instance=ExtResource("1_htkg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17700195, 0, -0.12731934)
+
+[node name="Cylinder" parent="Arvore_2" index="0" unique_id=338869852]
+surface_material_override/0 = SubResource("StandardMaterial3D_sxpmt")
+
+[node name="Cone" parent="Arvore_2" index="1" unique_id=700929783]
+surface_material_override/0 = SubResource("StandardMaterial3D_veqd1")
+
+[node name="Cone_001" parent="Arvore_2" index="2" unique_id=1491939800]
+surface_material_override/0 = SubResource("StandardMaterial3D_veqd1")
+
+[node name="Cone_006" parent="Arvore_2" index="3" unique_id=1069210556]
+surface_material_override/0 = SubResource("StandardMaterial3D_veqd1")
+
+[node name="Cone_009" parent="Arvore_2" index="4" unique_id=1892627262]
+surface_material_override/0 = SubResource("StandardMaterial3D_veqd1")
+
+[editable path="Arvore_2"]
