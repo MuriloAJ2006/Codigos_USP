@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://ctwqm8apc8vcj"]
+
+[ext_resource type="PackedScene" uid="uid://rvg5javowcar" path="res://Dugtrio/Dugtrio.glb" id="1_l2x2y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r067e"]
+albedo_color = Color(0.29886457, 0.21421677, 0.009401259, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sjtp"]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j02ba"]
+albedo_color = Color(0.14911404, 0.14911404, 0.14911404, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wye60"]
+albedo_color = Color(0.9843137, 0.5882353, 0.7764706, 1)
+
+[node name="Dugtrio" type="Node3D" unique_id=261614626]
+
+[node name="Dugtrio" parent="." unique_id=801125509 instance=ExtResource("1_l2x2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6959698, 0, 0.96924484)
+
+[node name="Sphere" parent="Dugtrio" index="0" unique_id=145212287]
+surface_material_override/0 = SubResource("StandardMaterial3D_r067e")
+
+[node name="Sphere_001" parent="Dugtrio" index="1" unique_id=2086271929]
+surface_material_override/0 = SubResource("StandardMaterial3D_r067e")
+
+[node name="Sphere_002" parent="Dugtrio" index="2" unique_id=557803266]
+surface_material_override/0 = SubResource("StandardMaterial3D_r067e")
+
+[node name="Sphere_003" parent="Dugtrio" index="3" unique_id=1001737351]
+surface_material_override/0 = SubResource("StandardMaterial3D_3sjtp")
+
+[node name="Sphere_006" parent="Dugtrio" index="4" unique_id=52466085]
+surface_material_override/0 = SubResource("StandardMaterial3D_3sjtp")
+
+[node name="Sphere_007" parent="Dugtrio" index="5" unique_id=1799163091]
+surface_material_override/0 = SubResource("StandardMaterial3D_3sjtp")
+
+[node name="Torus" parent="Dugtrio" index="6" unique_id=1179260505]
+surface_material_override/0 = SubResource("StandardMaterial3D_j02ba")
+
+[node name="Sphere_004" parent="Dugtrio" index="7" unique_id=1960179600]
+surface_material_override/0 = SubResource("StandardMaterial3D_wye60")
+
+[node name="Sphere_005" parent="Dugtrio" index="8" unique_id=988070453]
+surface_material_override/0 = SubResource("StandardMaterial3D_wye60")
+
+[node name="Sphere_008" parent="Dugtrio" index="9" unique_id=1808550393]
+surface_material_override/0 = SubResource("StandardMaterial3D_wye60")
+
+[editable path="Dugtrio"]
